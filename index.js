@@ -267,3 +267,87 @@
 // console.log(person.address.city);
 // person.greet();
 
+
+
+// function myfunc(){
+//     let x=prompt("enter fno");
+//     let y=prompt("enter lno");
+//     let result=Number(x)+Number(y);
+//     if(result){
+//         alert(`sum of two integers is: ${result}`);
+//     }
+// }
+
+// myfunc();
+
+///scopiing///
+
+// function myfunc(){
+// if(true){
+// var x=10;
+// let y=20;
+// const z=30;
+// console.log(y);
+// console.log(z);
+// }
+// console.log(x);
+// }
+// myfunc();
+
+
+///DOM///
+
+let result=document.getElementById("one");
+result.innerText="nigga have N.O right ";
+result.style.backgroundColor="black";
+result.style.color="red";
+result.style.textAlign="center";
+
+
+let output=document.getElementsByClassName("two")[0];
+output.innerText="White nigga have N.O right ";
+output.style.backgroundColor="black";
+output.style.color="red";
+output.style.textAlign="center";
+
+
+let ans=document.getElementsByClassName("two");
+ans[1].innerText="Asian nigga have N.O right ";
+ans[1].style.backgroundColor="black";
+ans[1].style.color="red";
+ans[1].style.textAlign="center";
+
+
+let show=document.getElementsByTagName("span");
+
+show[0].style.backgroundColor="black";
+show[0].style.color="red";
+show[0].style.textAlign="center";
+
+let x=document.getElementsByTagName("span");
+
+x[1].style.backgroundColor="black";
+x[1].style.color="red";
+x[1].style.textAlign="center";
+
+
+let j = document.getElementById("submit");
+let k = document.querySelector(".delete");
+
+j.style.backgroundColor="green";
+k.style.backgroundColor="red";
+
+k.setAttribute("class","meroclass");
+console.log(k.getAttribute("class"));
+
+function task(){
+let display = document.createElement("div");
+display.innerHTML="this is example";
+document.body.prepend(display);
+}
+
+
+k.onclick = function ntask(){
+    let h1=document.querySelector("h1");
+    h1.remove();
+}
