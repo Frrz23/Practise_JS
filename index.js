@@ -455,17 +455,72 @@ let newArr= [1,2,3,4,5,6];
 
 
 /////reduce/////////first value is accum and second is current value and the sum of them in accum and third is current value thats how it adds
-let output=newArr.reduce((accum,currval) =>accum+currval);
+// let output=newArr.reduce((accum,currval) =>accum+currval);
 
-console.log(output);//single line return element
+// console.log(output);//single line return element
 
-const products = [
-    { id: 1, name: "doctor sam", price: 8000, instock: true },
-    { id: 2, name: "doctor ram", price: 7000, instock: false },
-    { id: 3, name: "doctor jatin", price: 8820, instock: true },
-    { id: 4, name: "doctor hari", price: 8050, instock: false },
-];
+// const products = [
+//     { id: 1, name: "doctor sam", price: 8000, instock: true },
+//     { id: 2, name: "doctor ram", price: 7000, instock: false },
+//     { id: 3, name: "doctor jatin", price: 8820, instock: true },
+//     { id: 4, name: "doctor hari", price: 8050, instock: false },
+// ];
 
 
-let out = products.reduce((total,currval)=> total+currval.price,0);
-console.log(out);
+// let out = products.reduce((total,currval)=> total+currval.price,0);
+// console.log(out);
+
+// let heading=document.getElementById("heading");
+// let box=document.getElementById("box1");
+// let btn=document.getElementById("btn1");
+// let name=document.querySelector("input");
+
+
+
+// btn.addEventListener("click",()=>{
+//     console.log("clicked");
+//     box1.classList.add("classbox");
+    
+// });
+
+// btn.addEventListener("contextmenu",(e)=>{
+//     e.preventDefault();
+//     btn.style.backgroundColor = "green";
+// });
+
+// window.addEventListener("contextmenu",(e)=>{
+//     e.preventDefault();
+// });
+
+// window.addEventListener("click",(e)=>{
+//     console.log(e.clientX);
+//     console.log(e.clientY);
+// });
+
+// btn.addEventListener("dblclick",()=>{
+//     document.body.style.backgroundColor="gold";
+// });
+
+// box1.addEventListener("mouseover",()=>{
+//     btn.style.transform="scale(1.1)";
+//     heading.innerText="halalla";
+// });
+
+// name.addEventListener("change",()=>{
+//     console.log("changingggggggggggggggggggggggggggggggggggggggg");
+// });
+
+
+//math object
+// let num =4.7;
+// let ans =Math.round(num);
+// console.log(ans);
+
+// let output =Math.random();
+// console.log(output);
+
+let now =new Date().getFullYear();
+console.log(now);
+
+
+
