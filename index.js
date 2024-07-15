@@ -519,8 +519,27 @@ let newArr= [1,2,3,4,5,6];
 // let output =Math.random();
 // console.log(output);
 
-let now =new Date().getFullYear();
-console.log(now);
+// let now =new Date().getFullYear();
+// console.log(now);
 
 
 
+///Session storage///for the same tab but in local storage it can be used in diiferent tab
+
+// let add=document.getElementById("btnadd");
+// let remove=document.getElementById("btndelete");
+// let title=document.getElementById("heading");
+// let input=document.getElementById("name");
+
+// const myfunc=()=>{
+//     localStorage.setItem("keyyy1",JSON.stringify((name:"smaratha",age:17,ismarried:False)));
+// }
+// add.addEventListener("click",myfunc);
+// remove.addEventListener("click",()=>{
+//     localStorage.removeItem("keyyy1");
+//     // sessionstorage.clear();
+// });
+
+// if(localStorage.getItem("keyyy")){
+// alert(localStorage.getItem("keyyy1"));
+// }
