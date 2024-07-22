@@ -543,3 +543,107 @@ let newArr= [1,2,3,4,5,6];
 // if(localStorage.getItem("keyyy")){
 // alert(localStorage.getItem("keyyy1"));
 // }
+//seettimeoout 
+// setTimeout(()=>{
+//     console.log("hello");
+// },2000);
+
+//seetinterval
+// setInterval(()=>{
+//     console.log("hello");
+// },2000);
+
+// const internalid =setInterval(()=>{
+//     console.log("hello");
+// },2000);
+
+// setTimeout(()=>{
+//     clearInterval(internalid);
+// },5000);
+
+// function Updateclock(){
+//     const clock = document.querySelector('.clock');;
+//     const now = new Date();
+//     const hours = now.getHours().toString().padStart(2,"0");
+//     const minutes = now.getMinutes().toString().padStart(2,"0");
+//     const seconds = now.getSeconds().toString().padStart(2,"0");
+
+//     clock.innerHTML = `${hours}:${minutes}:${seconds}`;
+// }
+// setInterval(Updateclock,1000);
+
+///OOP////
+
+// function Person(name,age,gender){
+//     this.name=name;
+//     this.age=age;
+//     this.gender=gender;
+//     this.sayHello=function(){
+//         let greet=console.log(`hello im ${this.name}`);
+//         return greek;
+//     }
+// };
+// const person=new Person("salan",5,"M");
+// console.log(person);
+// console.log(person.sayHello());
+
+
+function Bankaccount(customername, balance = 0) {
+    this.customername = customername;
+    this.balance = balance;
+    this.accountno = Date.now();
+
+    this.deposit = function(amount) {
+        this.balance += amount;
+    };
+    this.withdraw = function(amount) {
+        this.balance -= amount;
+    };
+}
+
+const addform = document.querySelector("#addform");
+const customername = document.querySelector("#cname");
+const balance = document.querySelector("#balance");
+
+const depositform = document.querySelector("#depositform");
+const accountno = document.querySelector("#aname");
+const amount = document.querySelector("#amount");
+
+const withdrawform = document.querySelector("#withdrawform");
+const withdrawno = document.querySelector("#wname");
+const wamount = document.querySelector("#wamount");
+
+let accounts = [];
+
+addform.addEventListener("submit", (e) => {
+    e.preventDefault();
+    let account = new Bankaccount(customername.value, +balance.value);
+    accounts.push(account);
+
+    console.log(account);
+});
+
+depositform.addEventListener("submit", (e) => {
+    e.preventDefault();
+    let account = accounts.find(account => account.accountno === Number(accountno.value));
+    if (account) {
+        account.deposit(+amount.value);
+        console.log(accounts);
+    } else {
+        console.log("Account not found");
+    }
+});
+
+withdrawform.addEventListener("submit", (e) => {
+    e.preventDefault();
+    let account = accounts.find(account => account.accountno === Number(withdrawno.value));
+    account.withdraw(+wamount.value);
+    console.log(accounts);
+});
+// const name=new Bankaccount("name",8000);
+// const ramname=new Bankaccount("ram",20000);
+
+
+// ramname.deposit(4000);
+
+// console.log(name,ramname);
