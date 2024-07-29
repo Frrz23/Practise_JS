@@ -671,39 +671,190 @@ let newArr= [1,2,3,4,5,6];
 
 // console.log(ramacc,samacc);
 
-class BankAccount{
-     constructor(name,balance){
-        this.name = name;
-        this.balance = balance;
-        this.accountno = Math.floor(Math.random()*1000000);
-     }
-     deposit(amount){
-        this.balance+=amount;
-     }
-     withdraw(amount){
-        this.balance-=amount
-     }
-}
-class currentaccount extends BankAccount {
-   constructor(name,balance){
-      super(name,balance);
-   }
-   takebusinessloan(amount,tax){
-      let ans=amount+(amount*tax)/100;
-      console.log("this is a :${ans}");
-   }
-}
-class SavingAccount extends BankAccount {
-   constructor(name,balance){
-      super(name,balance);
-   }
-   takepersonalloan(amount,tax){
-      let ans=amount+(amount*tax)/100;
-      console.log("this is a :${ans}");
-   }
-}
-const now=new SavingAccount("ram",1000);
-now.deposit(500);
-const bow=new SavingAccount("sam",1000);
-console.log(now,bow);
+// class BankAccount{
+//      constructor(name,balance){
+//         this.name = name;
+//         this.balance = balance;
+//         this.accountno = Math.floor(Math.random()*1000000);
+//      }
+//      deposit(amount){
+//         this.balance+=amount;
+//      }
+//      withdraw(amount){
+//         this.balance-=amount
+//      }
+// }
+// class currentaccount extends BankAccount {
+//    constructor(name,balance){
+//       super(name,balance);
+//    }
+//    takebusinessloan(amount,tax){
+//       let ans=amount+(amount*tax)/100;
+//       console.log("this is a :${ans}");
+//    }
+// }
+// class SavingAccount extends BankAccount {
+//    constructor(name,balance){
+//       super(name,balance);
+//    }
+//    takepersonalloan(amount,tax){
+//       let ans=amount+(amount*tax)/100;
+//       console.log("this is a :${ans}");
+//    }
+// }
+// const now=new SavingAccount("ram",1000);
+// now.deposit(500);
+// const bow=new SavingAccount("sam",1000);
+// console.log(now,bow);
+
+///encapsulation//////
+// class BankAccount{
+//    #amount=0;
+//    constructor(name, amount){
+//       this.name = name;
+//       this.balance = amount;
+//       this.accno=Date.now();
+
+//    }
+//    deposit(balance){
+//       this.#amount += balance;   
+//    }
+//    withdraw(balance){
+//       this.#amount += balance;
+//    }
+//    setbalance(balance){
+//       this.#amount=balance;
+//    }
+//    getbalance(balance){
+//       return this.#amount;
+//    }
+// }
+
+// const ans=new BankAccount("ram",68515555);
+// console.log(ans);
+
+// ans.setbalance(5000);
+
+///static///
+// class congig{
+//    static username="karina chopada";
+//    static age =123;
+
+// }
+// console.log(congig.age);
+
+
+// class user{
+//    constructor(name,age){
+//       this.name=name;
+//       this.age=age;
+//    }  
+//    static compareage(a,b){
+//       return a.age-b.age;  
+//    }
+// }
+
+// let user1=new user("ram",50);
+// let user2=new user("sam",10);
+// let user3=new user("ham",80);
+
+// const users=[user1,user2,user3];
+// users.sort(user.compareage);
+// console.log(users);
+
+
+
+
+
+
+///Synchronus///////
+// console.log("hello world");
+// function Display(){
+//    for(let i=0;i<5;i++){
+//       console.log(i);
+//    }
+// }
+
+// Display();
+
+// alert("sup");//synchronous
+
+// console.log("yo");//cannot be printed before clicking ok in alert 
+
+//asnchromus//
+// setTimeout(()=>{
+//    alert("sup");
+
+// },40000000000000000000);
+// console.log("asynchronous");
+
+
+///Callback///
+// function sum(a,b,cb){
+//    let c=a+b;
+//    cb(c);
+// }
+
+// function display(result){
+//    const h2=document.createElement("h2");
+//    h2.innerText=`the sum is:${result}`;
+//    document.body.append(h1);
+// }
+
+// sum(4,9,display)
+
+
+// let arr=[4,5,6,7,8];
+
+// function calculate(arr=[],cb){
+//    let ans =[];
+//    for(let i=0;i<arr.length;i++){
+//       const element =cb(arr[i]);
+//       ans.push(element);
+//    }
+//    console.log(ans);
+// }
+
+// // function divide(a){
+//    //    return a/10;
+//    // }
+   
+    // calculate(arr,multiply);
+    // calculate(arr,divide);
+//    calculate(arr,(a)=>a*10);
+//    calculate(arr,(a)=>a/10);
+
+// let products = [];
+
+// const addProduct = (cb) => {
+//    setTimeout(() => {
+//       products.push(
+//          { id: 1, name: "ram", price: 4000, instock: true },
+//          { id: 2, name: "sam", price: 5000, instock: true }
+//       );
+//       console.log(products);
+//       cb();
+//    }, 4000);
+// };
+
+// const displayProducts = () => {
+//    setTimeout(() => {
+//       products.forEach(product => {
+//          const h1 = document.createElement("h1");
+//          h1.innerText = `Product: ${product.name}, Price: ${product.price}`;
+//          document.body.append(h1);
+//       });
+//    }, 1000);
+// };
+
+// addProduct(displayProducts);
+
+
+const res =new Promise((resolve,rejected)=>{
+   rejected("promise rejected");
+   resolve("promise resolved");
+})
+
+res.then((param)=>console.log(param)).catch((error)=>console.log(error));  
+
 
