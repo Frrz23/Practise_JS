@@ -1,0 +1,21 @@
+{
+    "person":{
+        "name":"John Doe",
+        "age":30,
+        "is_in_city": true
+    },
+    "products":[
+        {
+        "id":1,
+        "pname":"salaine",
+        "price":2000,
+        "instock":true
+        },
+    {
+        "id":2,
+        "pname":"chicken",
+        "price":500,
+        "instock":true
+    }
+    ]
+}

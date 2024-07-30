@@ -850,11 +850,48 @@ let newArr= [1,2,3,4,5,6];
 // addProduct(displayProducts);
 
 
-const res =new Promise((resolve,rejected)=>{
-   rejected("promise rejected");
-   resolve("promise resolved");
-})
+// const res =new Promise((resolve,rejected)=>{
+//     let success =true;
+//     if(success){
+//         resolve("suceesss");
 
-res.then((param)=>console.log(param)).catch((error)=>console.log(error));  
+//     }else{
+//         rejected("error");
+//     }
+// })
+
+// res.then((param)=>console.log(param)).catch((error)=>console.log(error));  
 
 
+///feth api///
+
+// const fetchdata =()=>[
+//     fetch("https://catfact.ninja/fact").then((res)=>res.json())
+//     .then((data)=>{
+//          const h1= document.createElement("h1");
+//          h1.innerText=data.fact;
+//          document.body.append(h1); 
+//         })
+//     .catch((err)=>console.log(err))
+// ];
+
+// fetchdata();
+
+const fetchdata=async ()=>{
+    try{
+        const ans= await fetch("https://catfact.ninja/facts");
+    let res =await ans.json();
+    // const h1=document.createElement("h1");
+    // h1.innerText=res.fact;
+    // document.body.append(h1);
+    const facts =res.data;
+    facts.forEach((value,index)=>{
+        const h1=document.createElement("h1");
+        h1.innerText=value.fact;
+        document.body.append(h1);
+    });
+    } catch(error){
+        console.log(error);
+    }
+};
+fetchdata();
